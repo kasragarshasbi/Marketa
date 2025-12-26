@@ -1,5 +1,8 @@
+import Navbar from "@/components/Sections/header";
 import "./globals.css";
 import localFont from "next/font/local";
+import Footer from "@/components/Sections/footer";
+import Support from "../shared/support";
 
 const peyda = localFont({
   src: [
@@ -63,7 +66,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="rtl" className="dark">
-      <body className={peyda.className}>{children}</body>
+      <body suppressHydrationWarning className={peyda.className}>
+        <Navbar />
+        {children}
+        <Support />
+        <Footer />
+      </body>
     </html>
   );
 }

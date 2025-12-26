@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { BackgroundBeams } from "../ui/background-beams";
 import { Verified } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Vortex } from "../ui/vortex";
 
 export default function HeroSection() {
   return (
@@ -69,32 +70,42 @@ export default function HeroSection() {
     //     </div>
     //   </div>
     // </section>
-    <div className="h-[40rem] w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
-      <div className="max-w-2xl mx-auto p-4">
+    <div className="w-[calc(100%-4rem)] mx-auto h-screen ">
+      <Vortex
+        backgroundColor="black"
+        rangeY={800}
+        particleCount={500}
+        baseHue={120}
+        className="flex items-center flex-col justify-center px-2 md:px-10 w-full h-full"
+      >
         <div className="text-center">
           <Badge variant="secondry" className="bg-[#08CB00]">
-            تمامی ارز های دیجیتال <Verified />
+            تمامی ارز های دیجیتال
+            <Verified className="animate-pulse text-blue-500" />
           </Badge>
         </div>
-
-        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-[#08CB00] to-[#252525]  text-center font-sans font-bold">
-          مارکتا کریپتو کرنسی
-        </h1>
-        <p></p>
-        <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
-          Welcome to MailJet, the best transactional email service on the web.
-          We provide reliable, scalable, and customizable email solutions for
-          your business. Whether you&apos;re sending order confirmations,
-          password reset emails, or promotional campaigns, MailJet has got you
-          covered.
+        <h2 className="text-white text-3xl md:text-6xl font-bold text-center md:m-8 m-4">
+          مارکتا بازار خرید و فروش ارزهای دیجیتال
+        </h2>
+        <p className="text-white text-sm md:text-2xl max-w-xl  text-center">
+          اولین و بزرگ‌ترین بازار ایرانی ارزهای دیجیتال و بستری امن و ساده برای
+          خرید و فروش مستقیم و سریع رمزارزها و سرمایه‌گذاری در بازار آن‌ها است.
+          در صرافی معتبر نوبیتکس، بی‌واسطه معامله کنید.
         </p>
-        <input
-          type="text"
-          placeholder="hi@manuarora.in"
-          className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700"
-        />
-      </div>
-      <BackgroundBeams />
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+          <Button className="bg-green-500 text-black hover:bg-green-300 rounded-xl px-6 font-medium shadow-lg transition-transform hover:scale-105">
+            دیدن بازار ها
+          </Button>
+          <Button variant="outline" className="px-4 rounded-xl py-2">
+            ورود به داشبورد
+          </Button>
+        </div>
+      </Vortex>
     </div>
   );
 }
+<div className="max-w-2xl mx-auto">
+  <h1 className="relative z-10 text-2xl md:text-5xl m-7  bg-clip-text text-transparent bg-linear-to-b from-[#08CB00] to-[#252525]  text-center font-sans font-bold"></h1>
+  <p></p>
+  <p className="text-neutral-500 px-5 max-w-lg mx-auto my-2 text-sm text-center relative z-10"></p>
+</div>;

@@ -7,10 +7,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Equal } from "lucide-react";
 import Icon from "../../shared/icon";
 
-export default function GlassNavbar() {
+export default function Navbar() {
   const navItems = [
     { label: "صفحه اصلی", href: "#" },
     { label: "خدمات", href: "#" },
@@ -21,27 +21,42 @@ export default function GlassNavbar() {
   return (
     <nav
       dir="rtl"
-      className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50"
+      className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50"
     >
-      <div className="relative backdrop-blur-xl bg-zinc-900/60 border border-white/10 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden">
-        {/* subtle glass gradient */}
-        <div className="absolute inset-0 bg-linear-to-r from-white/10 via-transparent to-white/5 pointer-events-none" />
+      <div
+        className="
+          relative
+          backdrop-blur-2xl
+          bg-[linear-gradient(to_bottom,rgba(255,255,255,0.08),rgba(255,255,255,0.02))]
+          border border-white/15
+          rounded-3xl
+          shadow-[0_20px_40px_rgba(0,0,0,0.6)]
+          overflow-hidden
+        "
+      >
+        <div className="absolute -inset-10 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.15),transparent_60%)] blur-2xl pointer-events-none" />
 
-        {/* inner highlight */}
-        <div className="absolute inset-px rounded-full bg-linear-to-b from-white/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.12),transparent,rgba(255,255,255,0.04))] pointer-events-none" />
+
+        <div className="absolute inset-px rounded-3xl bg-[linear-gradient(to_bottom,rgba(255,255,255,0.18),transparent_30%)] pointer-events-none" />
 
         <div className="relative px-6 py-4 text-white">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Icon className="">مارکتا</Icon>
+            <Icon>مارکتا</Icon>
 
-            {/* Desktop Navigation */}
             <ul className="hidden md:flex items-center gap-1">
               {navItems.map((item, index) => (
                 <li key={index}>
                   <a
                     href={item.href}
-                    className="relative px-5 py-2.5 text-white/80 font-medium text-sm rounded-xl transition-all duration-300 hover:text-[#08CB00] block"
+                    className="
+                      relative px-5 py-2.5
+                      text-white/80
+                      font-medium text-sm
+                      rounded-xl
+                      transition-all duration-300
+                      hover:text-[#08CB00]
+                    "
                   >
                     {item.label}
                   </a>
@@ -49,31 +64,36 @@ export default function GlassNavbar() {
               ))}
             </ul>
 
-            {/* Auth Buttons */}
             <div className="hidden md:flex items-center gap-3">
-              <Button
-                variant="ghost"
-                className="text-white/80 hover:text-white hover:bg-white/5 rounded-xl px-5 font-medium"
-              >
-                ورود
-              </Button>
-              <Button className="bg-white text-black hover:bg-white/90 rounded-xl px-6 font-medium shadow-lg transition-transform hover:scale-105">
-                ثبت نام
+              <Button className="bg-green-500 text-black hover:bg-green-300 rounded-xl px-6 font-medium shadow-lg transition-transform hover:scale-105">
+                ثبت نام | ورود
               </Button>
             </div>
 
-            {/* Mobile Menu */}
             <Sheet>
               <SheetTrigger asChild>
-                <button className="md:hidden p-2 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition">
-                  <Menu className="w-6 h-6" />
-                </button>
+                <Button className="bg-green-500 md:hidden text-black hover:bg-green-300 rounded-xl px-6 font-medium shadow-lg transition-transform hover:scale-105">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+                    />
+                  </svg>
+                </Button>
               </SheetTrigger>
 
               <SheetContent
                 side="right"
                 dir="rtl"
-                className="bg-zinc-950 text-white border-white/10"
+                className="bg-zinc-950/90 backdrop-blur-xl text-white border-white/10"
               >
                 <div className="flex flex-col h-full">
                   <div className="flex-1 py-6">

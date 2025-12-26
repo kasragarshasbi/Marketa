@@ -1,9 +1,11 @@
+import { NumberTicker } from "../ui/number-ticker";
+
 export default function TrustSection() {
   const stats = [
-    { value: "۵۰،۰۰۰+", label: "کاربر فعال" },
-    { value: "$۱۰۰M+", label: "حجم مدیریت شده" },
-    { value: "۱۵۰+", label: "کشور" },
-    { value: "۴.۹/۵", label: "رضایت کاربران" },
+    { value: 50000, suffix: "+", label: "کاربر فعال" },
+    { value: 100, prefix: "$", suffix: "M+", label: "حجم مدیریت شده" },
+    { value: 150, suffix: "+", label: "کشور" },
+    { value: 4.9, suffix: "/5", label: "رضایت کاربران" },
   ];
 
   return (
@@ -19,24 +21,23 @@ export default function TrustSection() {
           </p>
         </div>
 
-        {/* Stats Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="mb-2 text-3xl font-bold">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+              <div className="mb-2 text-3xl font-bold flex justify-center gap-1">
+                {stat.prefix && <span>{stat.prefix}</span>}
 
-        {/* Logos Placeholder */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-8 opacity-50">
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div
-              key={i}
-              className="h-8 w-24 rounded bg-muted/50"
-              aria-label="Company logo placeholder"
-            />
+                <NumberTicker
+                  duration={3.5}
+                  direction="up"
+                  value={stat.value}
+                />
+
+                {stat.suffix && <span>{stat.suffix}</span>}
+              </div>
+
+              <div className="text-sm  text-green-300">{stat.label}</div>
+            </div>
           ))}
         </div>
       </div>
