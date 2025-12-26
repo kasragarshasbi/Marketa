@@ -13,7 +13,7 @@ import Icon from "../../shared/icon";
 export default function Navbar() {
   const navItems = [
     { label: "صفحه اصلی", href: "#" },
-    { label: "خدمات", href: "#" },
+    { label: "خرید ارز دیجیتال", href: "#" },
     { label: "درباره ما", href: "#" },
     { label: "تماس با ما", href: "#" },
   ];

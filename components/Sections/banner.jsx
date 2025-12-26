@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 function banner() {
   return (
@@ -16,7 +17,6 @@ function banner() {
       shadow-[0_30px_80px_rgba(0,0,0,0.6)]
     "
       >
-        {/* Text */}
         <div className="text-center lg:text-right space-y-4">
           <h2 className="text-2xl lg:text-3xl font-semibold text-white">
             خرید آسان
@@ -29,11 +29,13 @@ function banner() {
             <span className="icon-chevron-left_outlined text-lg" />
           </Button>
         </div>
-
+        {/* sorry i use nobitex.ir image ❤️*/}
         <img
-          src="https://cdn.nobitex.ir/front/home/market.webp"
+          src="/images/market.webp"
           alt="crypto market"
-          className="w-64 h-64 object-contain"
+          className="w-64 h-64"
+          width="64"
+          height="64"
         />
       </div>
     </section>

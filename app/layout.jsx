@@ -56,6 +56,16 @@ const peyda = localFont({
       weight: "950",
       style: "normal",
     },
+    {
+      path: "../public/fonts/PeydaFaNumWeb-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/PeydaFaNumWeb-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
   ],
 });
 

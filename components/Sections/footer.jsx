@@ -1,32 +1,31 @@
+import Link from "next/link";
+import Icon from "../../shared/icon";
+
 export default function Footer() {
   const footerLinks = {
     محصول: ["امکانات", "قیمت‌گذاری", "امنیت", "API"],
     شرکت: ["درباره ما", "بلاگ", "فرصت‌های شغلی", "تماس با ما"],
     منابع: ["مستندات", "راهنما", "پشتیبانی", "وضعیت سرویس"],
-    قانونی: ["حریم خصوصی", "شرایط استفاده", "کوکی‌ها"],
   };
 
   return (
-    <footer className="border-t border-border/50 bg-background px-6 py-12 lg:px-8">
+    <footer className="border-t border-green-500 rounded-t-3xl bg-background px-6 py-12 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-5">
-          {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#" className="mb-4 inline-block text-xl font-bold">
-              کریپتو
-            </a>
-            <p className="mb-6 max-w-xs text-sm text-muted-foreground">
+            <Icon />
+            <p className="mt-6 max-w-xs text-sm text-muted-foreground">
               پلتفرم حرفه‌ای مدیریت و تحلیل دارایی‌های دیجیتال
             </p>
             <div className="flex gap-4">
               {["توییتر", "تلگرام", "دیسکورد"].map((social) => (
-                <a
+                <Link
                   key={social}
                   href="#"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {social}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -38,12 +37,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link}>
-                    <a
+                    <Link
                       href="#"
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -51,11 +50,10 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom */}
         <div className="mt-12 border-t border-border/50 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} کریپتو. تمام حقوق محفوظ است.
+              © {new Date().getFullYear()} مارکتا. تمام حقوق محفوظ است.
             </p>
             <div className="flex gap-6">
               <a

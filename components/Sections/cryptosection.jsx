@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Sparklines, SparklinesLine } from "react-sparklines";
+import { ArrowLeft, MoveLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function CryptoTable() {
   const [coins, setCoins] = useState([]);
@@ -103,6 +105,13 @@ export default function CryptoTable() {
           );
         })}
       </div>
+      <Link
+        href=""
+        className="text-center justify-center flex items-center gap-4 mt-8"
+      >
+        <span>مشاهده همه بازار ها</span>
+        <MoveLeft className="text-green-500" />
+      </Link>
     </section>
   );
 }
