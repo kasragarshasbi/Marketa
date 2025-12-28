@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Footer from "@/components/Sections/footer";
 import Support from "../shared/support";
+import { Toaster } from "sonner";
 
 const peyda = localFont({
   src: [
@@ -80,6 +81,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Support />
+        <Toaster position="top-center" richColors theme="dark" />
         <Footer />
       </body>
     </html>

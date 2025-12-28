@@ -1,0 +1,17 @@
+    # file: docker-compose.yml
+    version: '3.8'
+    services:
+      db:
+        image: postgres:16-alpine # نسخه‌ی پایدار و سبک PostgreSQL
+        restart: always
+        environment:
+          POSTGRES_USER: prisma_user # نام کاربری دیتابیس
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: otp_project # نام دیتابیس اصلی شما
+        ports:
+          - "5432:5432" # پورت 5432 لوکال به پورت 5432 داکر
+        volumes:
+          - postgres_data:/var/lib/postgresql/data
+    
+    volumes:
+      postgres_data:
